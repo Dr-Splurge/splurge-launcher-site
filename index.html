@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splurge Launcher</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0d0816;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .glow {
+      position: fixed;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(194, 82, 255, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      width: 100%;
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 16px;
+      filter: drop-shadow(0 0 30px rgba(194, 82, 255, 0.5));
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    h1 span { color: #c252ff; }
+
+    .tagline {
+      color: #a0a0b0;
+      font-size: 1.1rem;
+      margin-bottom: 48px;
+    }
+
+    .downloads {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .dl-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 32px;
+      border-radius: 14px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      width: 100%;
+      max-width: 400px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .dl-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(194, 82, 255, 0.3);
+    }
+
+    .dl-btn.windows {
+      background: linear-gradient(135deg, #c252ff 0%, #8b2fc7 100%);
+    }
+
+    .dl-btn.steamdeck {
+      background: linear-gradient(135deg, #3a2560 0%, #1a1025 100%);
+      border: 1px solid rgba(194, 82, 255, 0.3);
+    }
+
+    .dl-btn svg { flex-shrink: 0; }
+
+    .dl-info {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .dl-info small {
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 400;
+      font-size: 0.8rem;
+    }
+
+    .version {
+      margin-top: 48px;
+      color: #666;
+      font-size: 0.85rem;
+    }
+
+    .features {
+      margin-top: 64px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      text-align: left;
+    }
+
+    .feature {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(194, 82, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .feature h3 {
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      color: #c252ff;
+    }
+
+    .feature p {
+      font-size: 0.85rem;
+      color: #a0a0b0;
+      line-height: 1.5;
+    }
+
+    .instructions {
+      margin-top: 48px;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(194, 82, 255, 0.1);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .instructions h2 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: #c252ff;
+    }
+
+    .instructions ol {
+      padding-left: 20px;
+      color: #a0a0b0;
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 2rem; }
+      .logo { width: 100px; height: 100px; }
+      .dl-btn { padding: 14px 20px; font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="container">
+    <img src="icon.png" alt="Splurge Launcher" class="logo">
+    <h1>SPLURGE <span>LAUNCHER</span></h1>
+    <p class="tagline">Your game library, one launcher to rule them all.</p>
+
+    <div class="downloads">
+      <a href="https://github.com/Dr-Splurge/splurge-launcher-site/releases/latest/download/Splurge-Launcher-Setup.exe" class="dl-btn windows">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+        <div class="dl-info">
+          Windows
+          <small>Installer (.exe)</small>
+        </div>
+      </a>
+      <a href="https://github.com/Dr-Splurge/splurge-launcher-site/releases/latest/download/SplurgeLauncher-SteamOS.tar.gz" class="dl-btn steamdeck">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        <div class="dl-info">
+          Steam Deck / Linux
+          <small>SteamOS installer (.tar.gz)</small>
+        </div>
+      </a>
+    </div>
+
+    <p class="version">v0.3.0</p>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Multi-Site Library</h3>
+        <p>Browse and search games from multiple sources in one place.</p>
+      </div>
+      <div class="feature">
+        <h3>Mod Manager</h3>
+        <p>Browse, install, and manage mods from Thunderstore and Nexus Mods.</p>
+      </div>
+      <div class="feature">
+        <h3>Steam Deck Ready</h3>
+        <p>Full controller support with Big Picture style UI. Works in Game Mode.</p>
+      </div>
+      <div class="feature">
+        <h3>Auto Updates</h3>
+        <p>Get the latest version automatically — no need to re-download.</p>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <h2>Steam Deck Install</h2>
+      <ol>
+        <li>Download the .tar.gz file above</li>
+        <li>Switch to Desktop Mode on your Steam Deck</li>
+        <li>Extract the archive and run <strong>install.sh</strong></li>
+        <li>Switch back to Game Mode — it'll be in your Library</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>
